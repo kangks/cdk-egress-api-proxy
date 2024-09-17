@@ -42,7 +42,7 @@ This project contains AWS CDK constructs to set up an API Gateway with a VPC end
         "subnets": [
           { "avaialbilityZone": "us-east-1a", "subnetId": "subnet-123456" }
         ],
-        "CidrAPIcallee": "0.0.0.0/0",
+        "cidrAPIcallee": "0.0.0.0/0",
         "rootResource": "api"
       }
     }
@@ -71,7 +71,7 @@ This project contains AWS CDK constructs to set up an API Gateway with a VPC end
     const construct = new proxy.EgressApiProxyConstruct(stack, prefix, {
       vpcId: config[stageName]['vpcId'],
       subnets: config[stageName]['subnets'],
-      CidrAPIcallee: config[stageName]['CidrAPIcallee'],
+      cidrAPIcallee: config[stageName]['cidrAPIcallee'],
       rootResource: config[stageName]['rootResource'],
     });
 

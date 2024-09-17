@@ -1,13 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-
-export interface EgressApiProxyConstructProps extends cdk.StackProps{
-  vpcId: string,
-  subnets: {avaialbilityZone:string, subnetId:string}[],
-  CidrAPIcallee: string,
-  rootResource?: string,
-  baseUrl?: string,
-}
+import { EgressApiProxyConstructProps } from './EgressApiProxyConstructProps';
 
 export class EgressApiProxyConstruct extends Construct {
 
@@ -69,6 +62,6 @@ export class EgressApiProxyConstruct extends Construct {
     )
     
     // production stage
-    const deployment = new cdk.aws_apigateway.Deployment(this, 'Deployment', {api});
+    new cdk.aws_apigateway.Deployment(this, 'Deployment', {api});
   }
 }

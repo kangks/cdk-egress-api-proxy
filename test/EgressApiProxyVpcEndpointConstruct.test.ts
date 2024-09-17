@@ -1,6 +1,5 @@
-import * as cdk from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { EgressApiProxyVpcEndpointConstruct } from '../lib/EgressApiProxyVpcEndpointConstruct';
+import { EgressApiProxyVpcEndpointConstruct } from '../lib/';
 import { App, Stack } from 'aws-cdk-lib';
 import { EgressApiProxyConstructProps } from '../lib/EgressApiProxyConstructProps';
 
@@ -14,7 +13,7 @@ test('EgressApiProxyVpcEndpointConstruct creates necessary resources', () => {
   const props: EgressApiProxyConstructProps = {
     vpcId: 'vpc-123456',
     subnets: [{ avaialbilityZone: 'us-east-1a', subnetId: 'subnet-123456' }],
-    CidrAPIcallee: '0.0.0.0/0'
+    cidrAPIcallee: '0.0.0.0/0'
   };
 
   // Instantiate EgressApiProxyVpcEndpointConstruct
